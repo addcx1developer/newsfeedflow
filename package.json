@@ -6,6 +6,7 @@
   "author": "Alexis Dela Cruz",
   "scripts": {
     "prettier": "prettier . --write",
+    "print-schema": "babel-node scripts/printSchema.js > server/schema.graphql",
     "relay": "relay-compiler",
     "watch-server": "babel-node --watch server/index.js",
     "watch-webpack": "webpack server",
@@ -17,6 +18,7 @@
     "@babel/preset-flow": "^7.25.7",
     "@babel/preset-react": "^7.25.7",
     "babel-loader": "^9.2.1",
+    "babel-plugin-relay": "^18.1.0",
     "babel-plugin-syntax-hermes-parser": "^0.24.0",
     "concurrently": "^9.0.1",
     "css-loader": "^7.1.2",
@@ -36,6 +38,8 @@
   "dependencies": {
     "graphql": "17.0.0-alpha.7",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-relay": "^18.1.0",
+    "relay-runtime": "^18.1.0"
   }
 }

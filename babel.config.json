@@ -3,5 +3,5 @@
     "@babel/preset-flow",
     ["@babel/preset-react", { "runtime": "automatic" }]
   ],
-  "plugins": ["babel-plugin-syntax-hermes-parser"]
+  "plugins": ["babel-plugin-syntax-hermes-parser", "relay"]
 }

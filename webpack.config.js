@@ -27,6 +27,13 @@ module.exports = () => {
     plugins: [new HtmlWebpackPlugin(), new MiniCssExtractPlugin()],
     devServer: {
       port: 3000,
+      historyApiFallback: true,
+      proxy: [
+        {
+          context: ['/graphql'],
+          target: 'http://localhost:8080',
+        },
+      ],
     },
     devtool: 'inline-source-map',
   };
