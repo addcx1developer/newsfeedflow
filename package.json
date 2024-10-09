@@ -1,0 +1,28 @@
+{
+  "name": "NewsfeedFlow",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "author": "Alexis Dela Cruz",
+  "scripts": {
+    "prettier": "prettier . --write",
+    "relay": "relay-compiler",
+    "watch-server": "babel-node --watch server/index.js",
+    "dev": "concurrently yarn:watch-* -c auto"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.7",
+    "@babel/node": "^7.25.7",
+    "@babel/preset-flow": "^7.25.7",
+    "babel-plugin-syntax-hermes-parser": "^0.24.0",
+    "concurrently": "^9.0.1",
+    "eslint": "^9.12.0",
+    "flow-bin": "^0.247.1",
+    "flow-typed": "^4.0.0",
+    "prettier": "^3.3.3",
+    "relay-compiler": "^18.1.0"
+  },
+  "dependencies": {
+    "graphql": "17.0.0-alpha.7"
+  }
+}

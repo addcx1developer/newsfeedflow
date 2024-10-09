@@ -1,0 +1,8 @@
+{
+  "ignorePatterns": ["webpack.config.js", "node_modules/", "dist/"],
+  "extends": ["eslint:recommended"],
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
