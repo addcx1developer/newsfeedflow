@@ -2,12 +2,12 @@
  * @flow strict
  * @format
  */
-"use strict";
+'use strict';
 
-const http = require("http");
-const { execute, validateSchema, parse, validate } = require("graphql");
-const schema = require("./schema.js");
-const { rootValue } = require("./resolvers.js");
+const http = require('http');
+const { execute, validateSchema, parse, validate } = require('graphql');
+const schema = require('./schema.js');
+const { rootValue } = require('./resolvers.js');
 
 const graphql = (args: Object): Object => {
   const schemaValidationErrors = validateSchema(schema);
@@ -38,16 +38,16 @@ const graphql = (args: Object): Object => {
 const PORT: number = 8080;
 const server = http.createServer(
   async (req: http.IncomingMessage, res: http.ServerResponse): Object => {
-    res.writeHead(200, { "Content-Type": "application/json" });
+    res.writeHead(200, { 'Content-Type': 'application/json' });
 
     let response: Object = { data: null };
-    if (req.method === "POST") {
+    if (req.method === 'POST') {
       const buffers: Buffer[] = [];
       for await (const chunk of req) {
-        if (typeof chunk !== "string") {
+        if (typeof chunk !== 'string') {
           buffers.push(chunk);
         } else {
-          buffers.push(Buffer.from(chunk, "utf-8"));
+          buffers.push(Buffer.from(chunk, 'utf-8'));
         }
       }
 
@@ -69,6 +69,6 @@ const server = http.createServer(
   },
 );
 
-server.listen(PORT).addListener("listening", () => {
+server.listen(PORT).addListener('listening', () => {
   console.log(`Server is listening on port ${PORT}.`);
 });

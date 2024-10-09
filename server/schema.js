@@ -2,7 +2,7 @@
  * @flow strict
  * @format
  */
-"use strict";
+'use strict';
 
 const {
   GraphQLSchema,
@@ -12,12 +12,12 @@ const {
   GraphQLID,
   GraphQLString,
   GraphQLInt,
-} = require("graphql");
+} = require('graphql');
 
 const DateTimeType = GraphQLString;
 
 const ImageType = new GraphQLObjectType({
-  name: "Image",
+  name: 'Image',
   fields: {
     url: { type: new GraphQLNonNull(GraphQLString) },
     altText: { type: GraphQLString },
@@ -25,7 +25,7 @@ const ImageType = new GraphQLObjectType({
 });
 
 const LocationType = new GraphQLObjectType({
-  name: "Location",
+  name: 'Location',
   fields: {
     id: { type: new GraphQLNonNull(GraphQLID) },
     name: { type: new GraphQLNonNull(GraphQLString) },
@@ -33,7 +33,7 @@ const LocationType = new GraphQLObjectType({
 });
 
 const ActorInterface = new GraphQLInterfaceType({
-  name: "Actor",
+  name: 'Actor',
   fields: {
     id: { type: new GraphQLNonNull(GraphQLID) },
     name: { type: GraphQLString },
@@ -43,7 +43,7 @@ const ActorInterface = new GraphQLInterfaceType({
 });
 
 const PersonType = new GraphQLObjectType({
-  name: "Person",
+  name: 'Person',
   interfaces: [ActorInterface],
   fields: {
     id: { type: new GraphQLNonNull(GraphQLID) },
@@ -56,14 +56,14 @@ const PersonType = new GraphQLObjectType({
 });
 
 const ViewerType = new GraphQLObjectType({
-  name: "Viewer",
+  name: 'Viewer',
   fields: {
     actor: { type: ActorInterface },
   },
 });
 
 const QueryType = new GraphQLObjectType({
-  name: "Query",
+  name: 'Query',
   fields: {
     viewer: { type: ViewerType },
   },

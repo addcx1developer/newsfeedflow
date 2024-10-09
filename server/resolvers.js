@@ -2,18 +2,18 @@
  * @flow strict
  * @format
  */
-"use strict";
+'use strict';
 
-const { nodes } = require("./data.js");
+const { nodes } = require('./data.js');
 
 function nodeResolver({ id }: { id: string }) {
-  return nodes.find((node) => node.id === id);
+  return nodes.find(node => node.id === id);
 }
 
 const rootValue = {
   viewer: (): Object => {
     return {
-      actor: nodes.find((node) => node.id === "the-viewer"),
+      actor: nodes.find(node => node.id === 'the-viewer'),
     };
   },
 };
