@@ -12,5 +12,7 @@ deprecated-type-dollar-tuple-map=error
 deprecated-type-predicate=error
 
 [options]
+component_syntax=true
+react.runtime=automatic
 
 [strict]
